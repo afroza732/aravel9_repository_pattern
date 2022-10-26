@@ -15,10 +15,10 @@ class CategoryRepository implements CategoryInterface{
     public function store(array $data){
         return Category::create($data);
     }
-    public function update($id,array $data){
-
+    public function update($category,array $data){
+        return $category->update($data);
     }
-    public function delete($id){
+    public function destroy($id){
         return Category::findOrFail($id)->delete();
     }
 }
